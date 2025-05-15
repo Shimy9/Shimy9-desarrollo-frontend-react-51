@@ -6,9 +6,9 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 const Banner = () => {
   // Arreglo de imágenes dentro del componente
   const images = [
-    "src/assets/carrusel/baseparabannercanaldeyoutube.png",
-    "src/assets/carrusel/PUENTE1.jpg",
-    "src/assets/carrusel/PLAZAYFRONTISMUNICIPALIDAD1.jpg",
+    "src/assets/banner/baseparabannercanaldeyoutube.png",
+    "src/assets/banner/PUENTE1.jpg",
+    "src/assets/banner/PLAZAYFRONTISMUNICIPALIDAD1.jpg",
   ];
 
   const [activeStep, setActiveStep] = useState(0);

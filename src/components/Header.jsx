@@ -34,6 +34,7 @@ const Header = () => {
                 key={opcion.id}
                 href={opcion.link}
                 color="inherit"
+                underline="none"
                 sx={{ marginRight: idx !== opciones.length - 1 ? 2 : 0 }}
               >
                 {opcion.nombre}
