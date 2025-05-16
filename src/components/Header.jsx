@@ -13,8 +13,10 @@ const Header = () => {
 
     // Opciones de navegación
   const opciones = [
-    { id: 1, nombre: "Servicios", link: "#servicios" },
-    { id: 2, nombre: "Contacto", link: "#contacto" },
+    { id: 1, nombre: "Nosotros", link: "#nosotros" },
+    { id: 2, nombre: "Noticias", link: "#noticias" },
+    { id: 3, nombre: "Contacto", link: "#contacto" },
+
   ];
 
   return (

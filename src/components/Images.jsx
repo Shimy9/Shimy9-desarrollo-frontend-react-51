@@ -1,7 +1,7 @@
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 
-const Fotos = ({ images }) => {
+const Images = ({ images }) => {
   // Solo las primeras 8 imágenes para 2 filas x 4 columnas
   const imagesToShow = images.slice(0, 8);
 
@@ -47,4 +47,4 @@ const Fotos = ({ images }) => {
     </ImageList>
   );
 };
-export default Fotos;
+export default Images;
