@@ -14,6 +14,16 @@ import cambioclimatico from "../assets/noticias/cambioclimatico.jpg";
 import horario from "../assets/noticias/horario.jpg";
 import permiso from "../assets/noticias/permisodecirculacion.jpeg";
 
+// Importando imágenes para itemData
+import bienvenidos from "../assets/fotos/bienvenidos.jpg";
+import balneario from "../assets/fotos/Balneario-Rio-Cholchol.jpg";
+import cruce from "../assets/fotos/cruce_en_balsa.jpg";
+import mapuche from "../assets/fotos/mapuche.jpg";
+import municipalidad from "../assets/fotos/Municipalidad_de_Chol-Chol.jpg";
+import puenteviejo from "../assets/fotos/puenteviejo.jpg";
+import puentesinvierno from "../assets/fotos/puentesdesdeabajoinvierno.jpg";
+import ruka from "../assets/fotos/Ruka-de-Cholchol.jpg";
+
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -32,35 +42,35 @@ const Home = () => {
   // Arreglo de imágenes
   const itemData = [
     {
-      img: "src/assets/fotos/bienvenidos.jpg",
+      img: bienvenidos,
       title: "Bienvenidos a Chol-Chol",
     },
     {
-      img: "src/assets/fotos/Balneario-Rio-Cholchol.jpg",
+      img: balneario,
       title: "Balneario Río Chol-Chol",
     },
     {
-      img: "src/assets/fotos/cruce_en_balsa.jpg",
+      img: cruce,
       title: "Cruce en Balsa",
     },
     {
-      img: "src/assets/fotos/mapuche.jpg",
+      img: mapuche,
       title: "Cultura Mapuche",
     },
     {
-      img: "src/assets/fotos/Municipalidad_de_Chol-Chol.jpg",
+      img: municipalidad,
       title: "Municipalidad de Chol-Chol",
     },
     {
-      img: "src/assets/fotos/puenteviejo.jpg",
+      img: puenteviejo,
       title: "Puente Viejo",
     },
     {
-      img: "src/assets/fotos/puentesdesdeabajoinvierno.jpg",
+      img: puentesinvierno,
       title: "Puentes desde Abajo",
     },
     {
-      img: "src/assets/fotos/Ruka-de-Cholchol.jpg",
+      img: ruka,
       title: "Ruka de Chol-Chol",
     },
   ];

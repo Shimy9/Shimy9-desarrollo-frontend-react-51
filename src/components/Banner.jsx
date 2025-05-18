@@ -3,13 +3,14 @@ import { Box, Button, MobileStepper, Paper } from "@mui/material";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 
+// Importa las imágenes
+import banner1 from "../assets/banner/baseparabannercanaldeyoutube.png";
+import banner2 from "../assets/banner/PUENTE1.jpg";
+import banner3 from "../assets/banner/PLAZAYFRONTISMUNICIPALIDAD1.jpg";
+
 const Banner = () => {
-  // Arreglo de imágenes dentro del componente
-  const images = [
-    "src/assets/banner/baseparabannercanaldeyoutube.png",
-    "src/assets/banner/PUENTE1.jpg",
-    "src/assets/banner/PLAZAYFRONTISMUNICIPALIDAD1.jpg",
-  ];
+  // Arreglo de imágenes importadas
+  const images = [banner1, banner2, banner3];
 
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = images.length;
