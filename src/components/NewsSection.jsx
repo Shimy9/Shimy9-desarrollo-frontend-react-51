@@ -12,7 +12,7 @@ const NewsSection = ({ news }) => {
     <Box sx={{ my: 6, px: 2 }}>
       <Typography
         variant="h3"
-        sx={{ mb: 4, textAlign: "center", fontWeight: "bold" }}
+        sx={{ mb: 4, textAlign: "center", fontWeight: "bold", color: "#fff" }}
       >
         Últimas Noticias
       </Typography>
@@ -29,10 +29,10 @@ const NewsSection = ({ news }) => {
           >
             <Card
               sx={{
-                width: 345, // ancho fijo
+                width: 345, 
                 height: "100%",
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "column", border:"1px solid #FFD700"
               }}
             >
               <CardActionArea onClick={() => handleReadMore(item)}>
@@ -41,7 +41,7 @@ const NewsSection = ({ news }) => {
                   height="140"
                   image={item.image}
                   alt={item.title}
-                  sx={{ objectFit: "cover", objectPosition: "top" }}
+                  sx={{ objectFit: "cover", objectPosition: "top"}} 
                 />
                 <CardContent>
                   <Typography

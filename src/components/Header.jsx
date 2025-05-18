@@ -1,8 +1,17 @@
-import {AppBar,Toolbar,Typography,IconButton,Drawer,List,ListItem,ListItemText,Box,Avatar,Link,} from "@mui/material";
+import {AppBar,Toolbar,IconButton,Drawer,List,ListItem,ListItemText,Box,Avatar,Link,} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import logo from "../assets/logos/cholchollogo.png";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleHome = () => {
+    navigate("/");
+  };
+
   // Estado para controlar el menú lateral
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -11,33 +20,67 @@ const Header = () => {
     setDrawerOpen(open);
   };
 
-    // Opciones de navegación
+  // Opciones de navegación
   const opciones = [
     { id: 1, nombre: "Nosotros", link: "#nosotros" },
     { id: 2, nombre: "Noticias", link: "#noticias" },
     { id: 3, nombre: "Contacto", link: "#contacto" },
-
   ];
+
+  // Navegación a sección
+  const handleNav = (link) => {
+    if (location.pathname === "/") {
+      window.location.hash = link;
+    } else {
+      navigate("/" + link);
+    }
+  };
 
   return (
     <>
-      <AppBar position="static" >
+      <AppBar position="static" sx={{ backgroundColor: "#012d3e" }}>
         {/* Barra de navegación */}
         <Toolbar>
-          <Box sx={{display: "flex", alignItems: "center", flexGrow: 1 }}>
+          <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
             {/* Logo de la Municipalidad */}
-            <Avatar alt="Logo" src="/logo.png" sx={{ marginRight: 1 }} />
-            <Typography variant="h6">Municipalidad de Chol-Chol</Typography>
+            <Avatar
+              alt="Logo"
+              src={logo}
+              sx={{ marginRight: 1, borderRadius: 0 }}
+            />
+            <Link
+              onClick={handleHome}
+              color="inherit"
+              underline="none"
+              sx={{
+                fontSize: "1.25rem",
+                transition: "color 0.2s",
+                "&:hover": {
+                  color: "#FFD700",
+                },
+                cursor: "pointer",
+              }}
+            >
+              Municipalidad de Chol-Chol
+            </Link>
           </Box>
           {/* Enlaces de navegación */}
           <Box sx={{ display: { xs: "none", sm: "flex" } }}>
             {opciones.map((opcion, idx) => (
               <Link
                 key={opcion.id}
-                href={opcion.link}
+                component="button"
                 color="inherit"
                 underline="none"
-                sx={{ marginRight: idx !== opciones.length - 1 ? 2 : 0 }}
+                onClick={() => handleNav(opcion.link)}
+                sx={{
+                  marginRight: idx !== opciones.length - 1 ? 2 : 0,
+                  transition: "color 0.2s",
+                  "&:hover": {
+                    color: "#FFD700",
+                  },
+                  cursor: "pointer",
+                }}
               >
                 {opcion.nombre}
               </Link>
@@ -58,8 +101,26 @@ const Header = () => {
       <Drawer anchor="top" open={drawerOpen} onClose={toggleDrawer(false)}>
         <List>
           {opciones.map((opcion) => (
-            <ListItem button key={opcion.id} onClick={toggleDrawer(false)}>
-              <ListItemText primary={opcion.nombre} />
+            <ListItem
+              key={opcion.id}
+              onClick={() => {
+                handleNav(opcion.link);
+                setDrawerOpen(false);
+              }}
+              disablePadding
+              button
+            >
+              <ListItemText
+                primary={opcion.nombre}
+                sx={{
+                  padding: "16px 24px",
+                  color: "inherit",
+                  textDecoration: "none",
+                  width: "100%",
+                  display: "block",
+                  cursor: "pointer",
+                }}
+              />
             </ListItem>
           ))}
         </List>

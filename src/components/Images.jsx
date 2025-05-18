@@ -24,7 +24,14 @@ const Images = ({ images }) => {
             src={`${item.img}?w=400&fit=crop&auto=format`}
             alt={item.title}
             loading="lazy"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              border: "1px solid #FFD700", 
+              boxSizing: "border-box",
+              borderRadius: "8px", 
+            }}
           />
           <div
             style={{
@@ -38,6 +45,8 @@ const Images = ({ images }) => {
               fontSize: "1rem",
               boxSizing: "border-box",
               textShadow: "0 1px 4px rgba(0,0,0,0.7)",
+              borderBottomLeftRadius: "8px", 
+              borderBottomRightRadius: "8px",
             }}
           >
             {item.title}
